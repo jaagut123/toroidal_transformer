@@ -121,12 +121,9 @@ function initp2() {
 
   // populate html form using values from query string
   document.getElementById("leg").value = qobj.leg;  // center leg
+  document.getElementById("thick").value = qobj.thick;  // thickness or stacking
   document.getElementById("pri-n").value = qobj.pturns;  // primary turns
   document.getElementById("sec-n").value = qobj.sturns;  // secondary turns
-
-  // compute winding window dimensions based on EI core center leg
-  qobj.winh = (qobj.leg / 2).toFixed(2);
-  qobj.winl = (qobj.winh * 3).toFixed(2);
 
   // compute median perimeters
   qobj.perimP = 2 * (11 / 8 * qobj.leg) + 2 * qobj.thick;
@@ -135,10 +132,6 @@ function initp2() {
   // compute total length
   qobj.lengthP = qobj.perimP * qobj.pturns;
   qobj.lengthS = qobj.perimS * qobj.sturns;
-
-  // populate html
-  document.getElementById("winh").value = qobj.winh;
-  document.getElementById("winl").value = qobj.winl;
 
   // update html with the units used in this calculation
   let cols = document.getElementsByClassName("unit");
