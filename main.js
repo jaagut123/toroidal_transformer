@@ -171,7 +171,14 @@ function simulate() {
   let n1 = qobj.pturns;
   let n2 = qobj.sturns;
   // window dimensions
-  let dia = document.getElementById("diam").value;
+  let dia = parseFloat(document.getElementById("diam").value);
+  if (dia > 0) {
+    // ok, there a value
+  } else {
+    // cannot proceed
+    document.getElementById("diam").focus();
+    return
+  }
   let f = (1 - document.getElementById("winf").value/100);
 
   let wa = Math.PI * dia * dia / 4 * f;
