@@ -170,12 +170,12 @@ function simulate() {
 
   let n1 = qobj.pturns;
   let n2 = qobj.sturns;
-  let H = document.getElementById("winh").value;
-  let L = document.getElementById("winl").value;
+  // window dimensions
+  let dia = document.getElementById("diam").value;
   let f = (1 - document.getElementById("winf").value/100);
-  let P1 = 2 * (11/8*L + H);
-  let P2 = 2 * (7/4*L + H);
-  let wa = H * L * f;
+
+  let wa = Math.PI * dia * dia / 4 * f;
+  
   let denom = parseFloat(n1) + parseFloat(n2 * n1**2/n2**2);
   let d1 = Math.sqrt(wa/denom);
   let d2 = d1 * n1/n2;
