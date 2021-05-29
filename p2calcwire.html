@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tranformer Designer</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="main.css"></link>
+</head>
+<body onload="initp2()">
+  <h1>Transformer Designer Page 2</h1>
+  <h3>Applicable to Toroidal Transformers Only</h3>
+  <table>
+    <tr>
+      <td><label>Toroid's core height (<span class="unit"></span>)</label></td>
+      <td><input type="text" id="leg" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Toroid's core thickness (<span class="unit"></span>)</label></td>
+      <td><input type="text" id="thick" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Number of turns - Primary</label></td>
+      <td><input type="text" id="pri-n" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Number of turns - Secondary</label></td>
+      <td><input type="text" id="sec-n" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Toroid's core Inner diameter (<span class="unit"></span>)</label></td>
+      <td><input type="number" id="diam" step=0.01></td>
+    </tr>
+    <tr>
+      <td><label><div class="tooltip">Window Factor (%)<span class="tooltiptext">
+          The window factor is the percentage to be deducted in the window area
+          dedicated to bobbin thickness, layer insulation thickness, and your 
+          effectiveness in layering out the wires around the bobbin. The value 
+          is somewhere from 20% to 50%. 
+      </span></div></label></td>
+      <td><input type="number" id="winf" step=0.01 min=20 max=50 value=30></td>
+    </tr>
+    <!--
+    <tr>
+      <td><label><div class="tooltip">Center Tap<span class="tooltiptext">
+        Use this option if you want to make a center tap on the secondary winding.
+        However by making a center tap, each half winding will be the original 
+        secondary voltage divided by two. If this is not what you want, just 
+        double the original secondary voltage in the previous calculation.
+      </span></div></label></td>
+      <td><input type="checkbox" id="tap"></td>
+    </tr>
+    -->
+    <tr>
+      <td><button id="calc" onclick="simulate()">Calculate Wire Size</button></td>
+    </tr>
+    <tr>
+      <td><label>Wire size - Primary AWG</label></td>
+      <td><input type="text" id="wirep" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Wire size - Secondary AWG</label></td>
+      <td><input type="text" id="wires" disabled></td>
+    </tr>
+    <tr>
+        <td><label>Ampacity - Primary</label></td>
+        <td><input type="text" id="ampp" disabled></td>
+      </tr>
+    <tr>
+      <td><label>Ampacity - Secondary</label></td>
+      <td><input type="text" id="amps" disabled></td>
+    </tr>
+      <td><label>Weight - Primary (kgs)</label></td>
+      <td><input type="text" id="kgsP" disabled></td>
+    </tr>
+  <tr>
+  <tr>
+      <td><label>Weight - Secondary (kgs)</label></td>
+      <td><input type="text" id="kgsS" disabled></td>
+    </tr>
+    </table>  
+</body>
+</html>
